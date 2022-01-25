@@ -1,5 +1,8 @@
 <ul> 
   <% @spaces.each do |space| %>
-    <li><a href="<%=  space  %>"><%=  space  %></a></li>
+    <li>
+      <h2><a href="#" + <%= space[:id] %>><%=  space[:name]  %></a></h2>
+      <p><%= space[:description] %></p>
+    </li>
   <% end %>
 </ul>

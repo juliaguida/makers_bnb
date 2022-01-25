@@ -104,12 +104,9 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
-<<<<<<< HEAD
-  arm64-darwin-21
-=======
   arm64-darwin-20
->>>>>>> c6c85bf (created a Space class and space_spec)
   x86_64-darwin-19
+  x86_64-darwin-20
 
 DEPENDENCIES
   capybara

@@ -12,7 +12,7 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/spaces/new' do
-    Space.create(name: params[:name], description: params[:description], price: params[:price])
+    Space.create(name: params[:name], description: params[:description], price: params[:price], date1: params[:date1], date2: params[:date2])
     'Your space has been created'
     redirect '/space_confirmation'
   end

@@ -12,12 +12,19 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/spaces/new' do
-    Space.create 
-    # connection = PG.connect(dbname: 'makers_bnb')
-    # connection.exec("INSERT INTO spaces (name) VALUES('#{name}')")
-    # connection.exec("INSERT INTO spaces (description) VALUES('#{description})")
+    Space.create(name: params[:name], description: params[:description], price: params[:price])
+    'Your space has been created'
+    redirect '/space_confirmation'
   end
-end
+
+  get '/space_confirmation' do
+    erb :space_confirmation
+  end
+
+  
+
+ end
+  
 
 
 

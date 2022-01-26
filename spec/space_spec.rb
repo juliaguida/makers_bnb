@@ -7,13 +7,15 @@ describe Space do
     it 'adds a record to the spaces table' do
       Space.create(
        name: "Lovely bungalow",
-       description: "A bungalow in Newquay with 5 bedrooms and a pool"
+       description: "A bungalow in Newquay with 5 bedrooms and a pool",
+       price: "199.00"
       )
 
       connection = PG.connect(dbname: 'makers_bnb') 
       result = connection.exec('SELECT * FROM spaces;')
-      p result
-      # assert that the above info is stored in the spaces table
+      result.map {|space| space}
+      
+       
     end
   end
 

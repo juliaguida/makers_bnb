@@ -21,10 +21,14 @@ class MakersBnB < Sinatra::Base
     erb :space_confirmation
   end
 
-  
+  get '/spaces' do
+    @spaces = Space.all
+    erb :index
+  end
+  run! if app_file == $0
+end
 
- end
-  
+
 
 
 

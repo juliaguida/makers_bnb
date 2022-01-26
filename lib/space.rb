@@ -1,17 +1,14 @@
 require 'pg'
 
 class Space
-  # attr_reader :spaces, :name, :description
+  def self.all 
 
-  # def initialize
-  #   @spaces = spaces
-  #   @name = name
-  #   @description = description
-  # end
-  
-  def self.all
-    connection = PG.connect(dbname: 'makers_bnb')
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'makers_bnb_test')
+    else 
+      connection = PG.connect(dbname: 'makers_bnb')
+    end
     result = connection.exec('SELECT * FROM spaces')
     result.map { |space| {name: space['name'], description: space['description']} }
-  end
+  end 
 end

@@ -9,9 +9,6 @@ class MakersBnB < Sinatra::Base
 
   get '/spaces' do
     @spaces = Space.all
-    # @description = params[:description]
-    # @name = params[:name]
-    p @spaces
     erb :index
   end
   run! if app_file == $0

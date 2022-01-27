@@ -14,13 +14,6 @@ def setup_test_database
   # Clear the spaces table
   connection.exec("TRUNCATE spaces;")
 end
-def setup_database
-  p "setting up the database"
-  connection = PG.connect(dbname: 'makers_bnb')
-
-  connection.exec("TRUNCATE spaces;")
-
-end 
 
 RSpec.configure do |config|
   config.before(:each) do

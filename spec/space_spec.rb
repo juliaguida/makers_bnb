@@ -13,7 +13,7 @@ describe Space do
        date2: "2022/01/27"
       )
 
-      connection = PG.connect(dbname: 'makers_bnb') 
+      connection = PG.connect(dbname: 'makers_bnb_test') 
       result = connection.exec('SELECT * FROM spaces;')
       result.map {|space| space}
       

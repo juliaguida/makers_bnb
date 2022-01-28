@@ -29,8 +29,14 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/sessions/new' do
-    'Log in to MakersBnB'
+    erb :sessions
   end 
+
+  post '/sessions/new' do
+    user = User.find_by_email(email: params[:email], password: params[:password])
+    session[:user_id] = user.id
+    redirect '/spaces'
+  end
 
 
 

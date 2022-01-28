@@ -17,5 +17,5 @@ gem 'selenium-webdriver'
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'webrick'
-
+gem 'byebug'
 

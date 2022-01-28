@@ -12,7 +12,8 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/spaces/new' do
-    Space.create(name: params[:name], description: params[:description], price: params[:price], date1: params[:date1], date2: params[:date2])
+    # grab the url from the parans and include it as a new arg below
+    Space.create(name: params[:name], description: params[:description], price: params[:price], date1: params[:date1], date2: params[:date2], url: params[:url])
     'Your space has been created'
      redirect '/space_confirmation'
     

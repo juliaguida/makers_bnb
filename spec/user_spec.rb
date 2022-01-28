@@ -1,3 +1,5 @@
+require 'user'
+
 describe User do
   describe '.create' do
     it 'adds an entry to the users table' do

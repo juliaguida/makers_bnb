@@ -27,6 +27,14 @@ class MakersBnB < Sinatra::Base
     @spaces = Space.all
     erb :index
   end
+
+  get '/sessions/new' do
+    'Log in to MakersBnB'
+  end 
+
+
+
+
   run! if app_file == $0
 end
 

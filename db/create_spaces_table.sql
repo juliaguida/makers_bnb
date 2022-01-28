@@ -1,1 +1,0 @@
-CREATE TABLE spaces(id SERIAL PRIMARY KEY, description TEXT, name VARCHAR(100));

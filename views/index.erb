@@ -1,9 +1,17 @@
 
 <h1>Book a space</h1>
 
-<h1>
-<a href="http://localhost:9292/spaces/new">Post a space!</a>
-</h1>
+<form action="/spaces/new" method="get">
+ <input type="submit" value="List a Space">
+</form>
+
+<%# <form>
+  <label for="date1">Available from:</label><br>
+  <input type="date" name="date1"><br>
+  <label for="date2">Available to:</label><br>
+  <input type="date" name="date2"><br>
+  <input type="submit" value="List Spaces">
+</form> %>
 
 
 <ul> 
@@ -11,6 +19,9 @@
     <li>
       <h2><a href="#" + <%= space[:id] %>><%=  space[:name]  %></a></h2>
       <p><%= space[:description] %></p>
+      <p><%= space[:price] %></p>
+      <p><%= space[:date1] %></p>
+      <p><%= space[:date2] %></p>
       <img src=<%= space[:url] %> >  
     </li>
   <% end %>

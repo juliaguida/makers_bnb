@@ -25,18 +25,17 @@ describe Space do
 describe '.all' do
   it 'lists all the spaces' do 
     connection = PG.connect(dbname:'makers_bnb_test')
-        
-    connection.exec("INSERT INTO spaces (description, name, url) VALUES ('Three bed house', 'Summer house', 'www.google.com');")
-    connection.exec("INSERT INTO spaces (description, name, url) VALUES ('Two bed luxury house', 'Koala house', 'www.amazon.com');")
-    connection.exec("INSERT INTO spaces (description, name, url) VALUES ('One bed cosy house', 'Penelope house', 'www.makers.com');")
+    connection.exec("INSERT INTO spaces (description, name, price, date1, date2, url) VALUES ('Three bed house', 'Summer house', '100', '2022-01-26', '2022-01-27', 'www.google.com');")
+    connection.exec("INSERT INTO spaces (description, name, price, date1, date2, url) VALUES ('Two bed luxury house', 'Koala house', '200', '2022-01-26', '2022-01-27', 'www.amazon.com');")
+    connection.exec("INSERT INTO spaces (description, name, price, date1, date2, url) VALUES ('One bed cosy house', 'Penelope house', '150', '2022-01-26', '2022-01-27', 'www.makers.com');")
         
     spaces = Space.all
         
     expect(spaces).to eq(
       [
-        {description: "Three bed house", name: "Summer house", url: "www.google.com"},
-        {description: "Two bed luxury house", name: "Koala house", url: "www.amazon.com"},
-        {description: "One bed cosy house", name: "Penelope house", url: "www.makers.com"}
+        {description: "Three bed house", name: "Summer house", price: '100', date1: '2022-01-26', date2: '2022-01-27', url: "www.google.com"},
+        {description: "Two bed luxury house", name: "Koala house", price: '200', date1: '2022-01-26', date2: '2022-01-27', url: "www.amazon.com"},
+        {description: "One bed cosy house", name: "Penelope house", price: '150', date1: '2022-01-26', date2: '2022-01-27', url: "www.makers.com"}
       ]
     )
   end

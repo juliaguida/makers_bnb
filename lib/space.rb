@@ -17,7 +17,7 @@ class Space
       connection = PG.connect(dbname: 'makers_bnb')
     end
     result = connection.exec('SELECT * FROM spaces')
-    result.map { |space| {name: space['name'], description: space['description'], url: space['url']} }
+    result.map { |space| {name: space['name'], description: space['description'], price: space['price'], date1: space['date1'], date2: space['date2'], url: space['url']} }
   end 
 end
 
